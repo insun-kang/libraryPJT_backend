@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 @Entity
 @Getter
-public class BigCommt {
+public class BigComment {
     @Id
     @GeneratedValue
     @Column(name = "big_comment_id")

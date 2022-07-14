@@ -22,8 +22,7 @@ public class Borrow {
     private List<BorrowBook> borrowBooks = new ArrayList<>();
 
     private LocalDateTime borrowDate;
-    @ManyToOne
-    @JoinColumn(name = "status_ID")
+
     private BorrowStatus status;
 
 
