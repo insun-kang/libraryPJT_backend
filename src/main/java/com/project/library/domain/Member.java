@@ -21,6 +21,8 @@ public class Member {
 
     private String password;
 
+    private MemberStatus memberStatus;
+
     private int point;
 
     private LocalDateTime createdAt;
@@ -30,4 +32,12 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Borrow> borrows = new ArrayList<>();
 
+    @OneToMany(mappedBy = "member")
+    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<BigComment> bigComments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Wish> wishes = new ArrayList<>();
 }

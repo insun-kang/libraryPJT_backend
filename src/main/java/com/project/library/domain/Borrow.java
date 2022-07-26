@@ -25,6 +25,14 @@ public class Borrow {
 
     private BorrowStatus status;
 
+    //== 연관관계 메서드 ==//
+    public void setMember(Member member) {
+        if (this.member != null) {
+            this.member.getBorrows().remove(this);
+        }
+        this.member = member;
+        member.getBorrows().add(this);
+    }
 
 
 }

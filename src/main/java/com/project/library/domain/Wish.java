@@ -21,4 +21,19 @@ public class Wish {
     private Book book;
 
     private LocalDateTime wishDate;
+    //== 연관관계 메서드 ==//
+    public void setMember(Member member) {
+        if (this.member != null) {
+            this.member.getWishes().remove(this);
+        }
+        this.member = member;
+        member.getWishes().add(this);
+    }
+    public void setBook(Book book) {
+        if (this.book != null) {
+            this.book.getWishes().remove(this);
+        }
+        this.book = book;
+        book.getWishes().add(this);
+    }
 }

@@ -26,4 +26,19 @@ public class BigComment {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    public void setMember(Member member) {
+        if (this.member != null) {
+            this.member.getComments().remove(this);
+        }
+        this.member = member;
+        member.getBigComments().add(this);
+    }
+    public void setComment(Comment comment) {
+        if (this.comment != null) {
+            this.comment.getBigComments().remove(this);
+        }
+        this.comment = comment;
+        comment.getBigComments().add(this);
+    }
 }

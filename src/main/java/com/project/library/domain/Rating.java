@@ -25,5 +25,13 @@ public class Rating {
 
     private int fiveCount;
 
+    //== 연관관계 메서드 ==//
+    public void setBook(Book book) {
+        if (this.book != null) {
+            this.book.getRatings().remove(this);
+        }
+        this.book = book;
+        book.getRatings().add(this);
+    }
 
 }
