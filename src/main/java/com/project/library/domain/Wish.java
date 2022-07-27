@@ -1,12 +1,15 @@
 package com.project.library.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Wish {
     @Id @GeneratedValue
     @Column(name = "wish_id")
@@ -36,4 +39,6 @@ public class Wish {
         this.book = book;
         book.getWishes().add(this);
     }
+
+
 }

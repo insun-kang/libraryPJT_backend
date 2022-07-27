@@ -21,7 +21,7 @@ public class Member {
 
     private String password;
 
-    private MemberStatus memberStatus;
+    private MemberStatus status;
 
     private int point;
 
