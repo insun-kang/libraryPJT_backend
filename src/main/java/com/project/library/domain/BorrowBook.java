@@ -22,7 +22,22 @@ public class BorrowBook {
     @JoinColumn(name = "borrow_id")
     private Borrow borrow;
 
-    public void addBorrow(Borrow borrow){
+    public void registBorrow(Borrow borrow){
         this.borrow = borrow;
+    }
+    public void registBook(Book book){
+        this.book = book;
+    }
+
+    public static BorrowBook createBorrowBook(Book book){
+        BorrowBook borrowBook = new BorrowBook();
+        borrowBook.registBook(book);
+        book.decreaseStock();
+
+        return borrowBook;
+    }
+
+    public void giveBack(){
+        getBook().increaseStock();
     }
 }

@@ -41,4 +41,10 @@ public class BigComment {
         this.comment = comment;
         comment.getBigComments().add(this);
     }
+    public void resistcreatedAt(LocalDateTime createdAt){
+        this.createdAt = createdAt;
+    }
+    public void resistupdatedAt(LocalDateTime updatedAt){
+        this.updatedAt = updatedAt;
+    }
 }

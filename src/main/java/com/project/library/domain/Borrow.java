@@ -40,12 +40,12 @@ public class Borrow {
     public void changeBorrowStatus(BorrowStatus status){
         this.status = status;
     }
-    public void setLocalDateTime(LocalDateTime borrowDate){
+    public void resistborrowDate(LocalDateTime borrowDate){
         this.borrowDate = borrowDate;
     }
     public void addBorrowBook(BorrowBook borrowBook){
         borrowBooks.add(borrowBook);
-        borrowBook.addBorrow(this);
+        borrowBook.registBorrow(this);
     }
 
     /**
@@ -61,8 +61,26 @@ public class Borrow {
             borrow.addBorrowBook(borrowBook);
         }
         borrow.changeBorrowStatus(BorrowStatus.BORROW);
-        borrow.setLocalDateTime(LocalDateTime.now());
+        borrow.resistborrowDate(LocalDateTime.now());
         return borrow;
     }
+
+
+//    public static Borrow reserveBorrow(Member member, BorrowBook... borrowBooks){
+//        Borrow borrow = new Borrow();
+//        borrow.setMember(member);
+//        for (BorrowBook borrowBook : borrowBooks){
+//            borrow.addBorrowBook(borrowBook);
+//        }
+//        borrow.changeBorrowStatus(BorrowStatus.RESERVE);
+//        borrow.resistborrowDate(LocalDateTime.now());
+//        return borrow;
+//    }
+        public void giveBack() {
+            this.changeBorrowStatus(BorrowStatus.RETURN);
+            for(BorrowBook borrowBook : borrowBooks){
+                borrowBook.giveBack();
+            }
+        }
 
 }

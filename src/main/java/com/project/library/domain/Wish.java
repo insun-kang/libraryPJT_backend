@@ -39,6 +39,9 @@ public class Wish {
         this.book = book;
         book.getWishes().add(this);
     }
+    public void resistwishDate(LocalDateTime wishDate){
+        this.wishDate = wishDate;
+    }
 
 
 }

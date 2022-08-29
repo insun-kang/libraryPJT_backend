@@ -49,4 +49,10 @@ public class Comment {
         this.book = book;
         book.getComments().add(this);
     }
+    public void resistcreatedAt(LocalDateTime createdAt){
+        this.createdAt = createdAt;
+    }
+    public void resistupdatedAt(LocalDateTime updatedAt){
+        this.updatedAt = updatedAt;
+    }
 }
