@@ -27,7 +27,7 @@ public class MemberService {
     }
 
     // 회원조회
-    public List<Member> findMember(){
+    public List<Member> findMembers(){
         return memberRepository.findAll();
     }
 

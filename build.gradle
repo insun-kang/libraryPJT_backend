@@ -29,7 +29,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.9'
+	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 }
 
 tasks.named('test') {

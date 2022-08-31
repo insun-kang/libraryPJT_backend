@@ -1,4 +1,4 @@
-package com.project.library.exception;
+package com.project.library.repository.exception;
 
 public class OverStockException extends RuntimeException{
     public OverStockException() {

@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 @Repository
 @RequiredArgsConstructor
 public class BorrowRepository {
-    private EntityManager em;
+    private final EntityManager em;
 
     public void save(Borrow borrow){
         em.persist(borrow);

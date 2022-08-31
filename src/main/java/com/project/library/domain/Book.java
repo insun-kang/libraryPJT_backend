@@ -1,7 +1,7 @@
 package com.project.library.domain;
 
-import com.project.library.exception.NotEnoughStockException;
-import com.project.library.exception.OverStockException;
+import com.project.library.repository.exception.NotEnoughStockException;
+import com.project.library.repository.exception.OverStockException;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -22,6 +22,8 @@ public class Book {
     @Column(columnDefinition = "TEXT")
     private String content;
 
+    private double rating;
+
     private int stockQuantity;
 
     private int nowStockQuantity;
@@ -31,9 +33,6 @@ public class Book {
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>();
-
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private List<Rating> ratings = new ArrayList<>();
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Wish> wishes = new ArrayList<>();

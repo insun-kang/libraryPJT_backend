@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class BookRepository {
-    private EntityManager em;
+    private final EntityManager em;
 
     public void save(Book book){
         if(book.getId() == null) {
