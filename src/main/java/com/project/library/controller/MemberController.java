@@ -19,7 +19,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @ResponseBody
-    @GetMapping(value = "/")
+    @GetMapping(value = "")
     public List<Member> members() {
         List<Member> members = memberService.findMembers();
 

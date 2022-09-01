@@ -17,7 +17,7 @@ public class BookController {
     private final BookService bookService;
 
     @ResponseBody
-    @GetMapping("/")
+    @GetMapping("")
     public List<Book> books(){
         List<Book> books = bookService.findBooks();
         return books;
@@ -25,26 +25,26 @@ public class BookController {
 
     @ResponseBody
     @PostMapping("/search")
-    public Book search(@RequestParam Long bookId){
+    public Book search(@RequestBody Long bookId){
         Book book = bookService.findOne(bookId);
         return book;
     }
 
     @ResponseBody
     @PostMapping("/regist")
-    public void regist(@RequestParam Book book){
+    public void regist(@RequestBody Book book){
         bookService.saveBook(book);
     }
 
     @ResponseBody
     @PostMapping("/edit")
-    public void edit(@RequestParam Book book){
+    public void edit(@RequestBody Book book){
         bookService.saveBook(book);
     }
 
     @ResponseBody
     @PostMapping("/delete")
-    public void delete(@RequestParam Book book){
+    public void delete(@RequestBody Book book){
         bookService.saveBook(book);
     }
 
