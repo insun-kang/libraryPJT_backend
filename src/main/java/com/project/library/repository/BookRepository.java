@@ -20,7 +20,6 @@ public class BookRepository {
             em.merge(book);
         }
     }
-
     public Book findOne(Long id){
         return em.find(Book.class, id);
     }
