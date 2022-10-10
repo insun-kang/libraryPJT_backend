@@ -9,6 +9,7 @@ import org.springframework.web.servlet.tags.Param;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api/v1/books")
 @RequiredArgsConstructor

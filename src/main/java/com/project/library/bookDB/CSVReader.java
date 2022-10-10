@@ -29,7 +29,7 @@ public class CSVReader {
     public static void main(String[] args) {
 
         //한글 깨지 방지를 위해서 characterEncoding=UTF-8 처리
-        final String jdbcURL = "jdbc:mysql://localhost:3306/library?serverTimezone=UTC&characterEncoding=UTF-8";
+        final String jdbcURL = "jdbc:mysql://localhost:3306/libraryPJT?serverTimezone=UTC&characterEncoding=UTF-8";
         final String username = "insun";
         final String password = "dlstjs06!";
 
@@ -42,8 +42,8 @@ public class CSVReader {
             connection = DriverManager.getConnection(jdbcURL, username, password);
             connection.setAutoCommit(false);
 
-            String sql = "insert  into `book`(`book_id`,`author`, `content`,`point`, `title`, `now_stock_quantity`,`rating`,`stock_quantity`) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert  into `book`(`book_id`,`author`, `content`,`point`, `title`, `now_stock_quantity`,`rating`,`stock_quantity`, 'link','publisher') "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement statement = connection.prepareStatement(sql);
 

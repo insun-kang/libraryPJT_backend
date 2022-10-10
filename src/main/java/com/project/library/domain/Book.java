@@ -15,6 +15,10 @@ public class Book {
     @Column(name = "book_id")
     private Long id;
 
+    private String publisher;
+
+    private String link;
+
     private String title;
 
     private String author;
