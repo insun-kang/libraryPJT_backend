@@ -22,6 +22,12 @@ public class BookService {
         bookRepository.save(book);
     }
 
+    @Transactional
+    public void removeBook(Long bookId){
+        bookRepository.remove(bookId);
+    }
+
+
     public List<Book> findBooks(){
         return bookRepository.findAll();
     }

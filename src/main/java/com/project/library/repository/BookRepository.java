@@ -20,6 +20,9 @@ public class BookRepository {
             em.merge(book);
         }
     }
+    public void remove(Long bookId){
+        em.remove(em.find(Book.class, bookId));
+    }
     public Book findOne(Long id){
         return em.find(Book.class, id);
     }

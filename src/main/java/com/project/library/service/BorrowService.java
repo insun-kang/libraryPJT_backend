@@ -22,7 +22,7 @@ public class BorrowService {
 
     //도서 대출
     @Transactional
-    public Long borrow(Long memberId, Long bookId, int cnt){
+    public Long borrow(Long memberId, Long bookId){
         Member member = memberRepository.findOne(memberId);
         Book book = bookRepository.findOne(bookId);
 
@@ -38,10 +38,10 @@ public class BorrowService {
         return borrow.getId();
     }
 
-    //도서 반납
+    //도서 반납(bookid, memberid를 통해 status가 borrow이면 반납한다.
     @Transactional
-    public void giveBackBook(Long borrowId){
-        Borrow borrow = borrowRepository.findOne(borrowId);
+    public void giveBackBook(Long memberId, Long bookId){
+        Borrow borrow = borrowRepository.findOneByBorrow(memberId, bookId);
         borrow.giveBack();
     }
 
