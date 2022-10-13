@@ -32,6 +32,7 @@ dependencies {
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 	// csv파일
 	implementation 'org.apache.commons:commons-csv:1.9.0'
+	implementation group: 'com.opencsv', name: 'opencsv', version: '4.4'
 }
 
 tasks.named('test') {

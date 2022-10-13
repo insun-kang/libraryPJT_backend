@@ -17,7 +17,7 @@ public class Book {
 
     private String publisher;
 
-    private String link;
+    private String image;
 
     private String title;
 
@@ -33,7 +33,7 @@ public class Book {
     private int nowStockQuantity;
 
 
-    private int point;
+    private int page;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>();
