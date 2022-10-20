@@ -28,8 +28,8 @@ public class BookController {
     }
 
     @ResponseBody
-    @PostMapping("/detail")
-    public Book detail(@RequestParam(name = "bookId") Long bookId){
+    @GetMapping("/detail/{id}")
+    public Book detail(@PathVariable("id") Long bookId){
         Book book = bookService.findOne(bookId);
         return book;
     }
